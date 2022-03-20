@@ -1,4 +1,25 @@
 /* reset css */
+
+@media (max-width:63.99em) {
+    body{
+        padding: 0!important;
+        height: 100%;
+    }
+    .heading{
+        font-size: 18px;
+    }
+    .desc{
+        padding: 20px 0!important;
+    }
+    .form-input::placeholder{
+        color: #000;
+        font-size: 15px;
+    }
+    .Sign-in{
+        font-size: 15px;
+    }
+}
+
 *{
     border: 0;
     margin: 0;
@@ -24,7 +45,7 @@ body{
 }
 /* header background */
 .background-header{
-    background-image: url('/assess/background\ image.svg');
+    background-image: url('../assess/background\ image.svg');
     height: 30vh;
     background-repeat: no-repeat;
     background-position:  center;
@@ -50,7 +71,7 @@ body{
 }
 .desc{
     display: block;
-    font-size: 10px;
+    font-size: 12px;
     color: #757575;
     padding: 10px 0;
 }
@@ -71,9 +92,6 @@ body{
 .form-message{
     font-size: 12px;
     display: none;
-}
-.gender{
-    font-size: 12px;
 }
 .Sign-in{
     width: 100%;
