@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./validation.css">
+    <link rel="stylesheet" href="../assess/fontawesome-free-6.0.0-web/css/all.css">
+</head>
+<body>
+    <div class="background-header"></div>
+
+    <form id="form-1" method="post" action="" class="all-form padding-32">
+        <div class="heading text-center">
+            <h2>Creat Account</h2>
+        </div>
+
+        <div class="form-group">
+            <label id="Name" for="full-name" class="desc">Full Name</label>
+            <input class="form-input" placeholder="Ex: Lê Thanh Bình" type="text" name="full-name" id="full-name">
+            <span class="form-message"></span>
+        </div>
+        
+        <div class="form-group">
+            <label id="Email" for="full-email" class="desc">Email</label>
+            <input class="form-input" placeholder="Ex: lethanhbinh6122003@gmail.com" type="email" name="full-email" id="full-email">
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label id="password" for="full-password" class="desc">Password</label>
+            <input class="form-input" placeholder="Ex: binhbeboi123" type="password" name="full-password" id="full-password">
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label id="password-again" for="Again" class="desc">Confirm password</label>
+            <input class="form-input" placeholder="Ex: binhbeboi123" type="password" name="Password" id="Again">
+            <span class="form-message"></span>
+        </div>
+        
+        <div class="form-group">
+            <label id="Province" for="place" class="desc">Where do you live</label>
+            <select class="form-input" id="place" class="desc" name="Province/city">
+                <option value="">--Choose your city--</option>
+                <option value="TP HN">HN city</option>
+                <option value="TP HCM">HCM city</option>
+                <option value="TP DN">DN city</option>
+            </select>
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="place" class="desc">Where do you live</label>
+            <select class="form-input" id="gender" class="desc" name="gender">
+                <option value="">--Choose gender--</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label id="files" for="file" class="desc">Your face image</label>
+            <input class="form-input" name="file" id="file" type="file">
+            <span class="form-message"></span>
+        </div>
+
+        <button class="Sign-in">Sign In</button>
+
+        <div class="sign-up text-center">Already have an account <a class="signUp" href="">sign up</a></div>
+    </form>
+    <script src="./validation.js">
+    </script>
+
+    <script>
+Validation({
+    form: '#form-1',
+    formGroup: '.form-group',
+    rules: [
+        Validation.isRequired('#full-name','Please type your full Name'),
+        Validation.isRequired('#full-email','Please type your Email'),
+        Validation.isEmail('#full-email','Please type correct Email'),
+        Validation.isRequired('#full-password','Please type your password'),
+        Validation.isMinLength('#full-password',6,'Please type enough charaters'),
+        Validation.isRequired('#Again','Please confirm password'),
+        Validation.isConfirmed('#Again',function () {
+            return document.querySelector('#form-1 #full-password').value
+        },'Please confirm your password'),
+        Validation.isRequired('#place','Please choose suitable place'),
+        Validation.isRequired('#gender','Please type your gender'),
+        Validation.isRequired('input[name="file"]','Please choose file'),
+
+    ],
+    onSubmit (data) {
+        console.log(data)
+    }
+}) 
+    </script>
+</body>
+</html>

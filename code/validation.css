@@ -1,0 +1,94 @@
+/* reset css */
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* class chung */
+
+.text-center{
+    text-align: center;
+}
+.padding-16{
+    padding: 16px;
+}
+.padding-32{
+    padding: 32px;
+}
+
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    padding: 0 30%;
+}
+/* header background */
+.background-header{
+    background-image: url('/assess/background\ image.svg');
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-position:  center;
+    background-size: 30vh;
+}
+
+/* form validation */
+.all-form{
+    background-color: rgb(242 242 242);
+    border-radius: 15px;
+    transition: linear .5s ease;
+}
+.heading{
+    padding-bottom: 20px;
+    font-weight: 900;
+}
+.form-group{
+
+}
+.form-group.invalid .form-message{
+    display: block;
+    color: red;
+}
+.desc{
+    display: block;
+    font-size: 10px;
+    color: #757575;
+    padding: 10px 0;
+}
+.form-input{
+    width: 100%;
+    padding: 16px;
+    color: #000;
+    border-radius: 5px;
+}
+.form-input:focus{
+    border: 1px solid #6c63ff;
+    background-color: lightblue;
+}
+.form-input::placeholder{
+    color: #000;
+}
+
+.form-message{
+    font-size: 12px;
+    display: none;
+}
+.gender{
+    font-size: 12px;
+}
+.Sign-in{
+    width: 100%;
+    background-color: #6c63ff;
+    height: 5vh;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: #fff;
+}
+.Sign-in:hover{
+    cursor: pointer;
+}
+.sign-up{
+    font-size: 12px;
+}
+.signUp{
+    color: #6c63ff;
+}
